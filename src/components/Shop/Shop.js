@@ -7,7 +7,7 @@ import {
   deleteShoppingCart,
   getStoredCart,
 } from "../../utilities/fakedb";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Shop = () => {
   const products = useLoaderData();
@@ -63,7 +63,11 @@ const Shop = () => {
         ))}
       </div>
       <div className="cart-container">
-        <Cart clearCart={clearCart} cart={cart}></Cart>
+        <Cart clearCart={clearCart} cart={cart}>
+          <Link to="/orders">
+            <button>Review Order</button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

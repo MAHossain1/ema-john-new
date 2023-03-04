@@ -33,7 +33,7 @@ const UserContext = ({ children }) => {
   // Get the currently signed-in user
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
-      console.log("current user inside state change", currentUser);
+      // console.log("current user inside state change", currentUser);
       setUser(currentUser);
       setLoading(false);
     });
